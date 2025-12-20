@@ -1,0 +1,30 @@
+{
+  "color_palette": {
+    "primary": "#1B3A8C",
+    "primary_light": "#2E52B8",
+    "primary_lighter": "#5B7DD4",
+    "secondary": "#D4A04C",
+    "accent": "#F0C674",
+    "background": "#F9F8F7",
+    "text": "#1A1A1A",
+    "text_light": "#666666",
+    "border": "#E0E0E0"
+  },
+  "gradients": {
+    "primary": "linear-gradient(135deg, #1B3A8C 0%, #2E52B8 50%, #5B7DD4 100%)",
+    "soft": "linear-gradient(to right, #fff5f7, #ffe8ed)",
+    "shimmer": "linear-gradient(135deg, #1B3A8C 0%, #2E52B8 40%, #D4A04C 60%, #1B3A8C 100%)"
+  },
+  "product_intelligence": {
+    "aesthetic": "glamorous nightclub",
+    "product_type": "bodycon mini dress",
+    "material": "rhinestone embellished fabric",
+    "formality": "party/nightlife",
+    "target_demographic": "women 18-35, nightlife enthusiasts",
+    "occasion": "nightclubs, parties, special events, Vegas trips, bachelorette parties",
+    "style_vibe": "glamorous, sparkly, bold, attention-grabbing, sexy",
+    "design_features": "starburst rhinestone pattern, thigh-high slit, square neckline, bodycon fit",
+    "color_story": "royal blue base with gold crystal starburst accents",
+    "vibe_keywords": ["dazzling", "eye-catching", "luxurious", "statement-making", "party-ready"]
+  }
+}

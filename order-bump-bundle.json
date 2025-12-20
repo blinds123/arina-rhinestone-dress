@@ -1,0 +1,83 @@
+{
+  "product_detected": "navy rhinestone bodycon mini dress with gold crystal accents",
+  "target_market": {
+    "segment": "Gen Z Girls",
+    "age_range": "21-35",
+    "mindset": "be unforgettable energy",
+    "occasions": ["nightclubs", "bachelorette parties", "NYE celebrations", "girls night out"]
+  },
+  "psychology_stack": {
+    "fear": "wardrobe malfunction ruining the night - straps showing, bra visible, panty lines killing the vibe",
+    "desire": "all eyes on me when I walk in - be the main character",
+    "identity": "THAT girl everyone asks about on Instagram",
+    "practical": "complete party-ready look with zero stress"
+  },
+  "bundle": {
+    "item1": {
+      "name": "Adhesive Silicone Bra Cups",
+      "short_name": "invisible support",
+      "why_copy": "no straps showing with that square neckline",
+      "feature": "strapless adhesive cups that stay put all night",
+      "perceived_value": 35,
+      "psychology_layer": "FEAR ELIMINATOR",
+      "solves": "bra showing with spaghetti straps and square neckline"
+    },
+    "item2": {
+      "name": "Seamless Nude Thong",
+      "short_name": "invisible seamless",
+      "why_copy": "zero lines on this bodycon fit",
+      "feature": "disappears under the dress - no VPL ever",
+      "perceived_value": 25,
+      "psychology_layer": "CONFIDENCE ENABLER",
+      "solves": "visible panty lines ruining the sleek bodycon silhouette"
+    },
+    "item3": {
+      "name": "Gold Drop Earrings",
+      "short_name": "gold drops",
+      "why_copy": "matches the crystal details - completes the glow",
+      "feature": "gold finish that coordinates with dress accents",
+      "perceived_value": 40,
+      "psychology_layer": "ASPIRATION COMPLETER",
+      "solves": "incomplete look - adds the finishing touch for main character energy"
+    }
+  },
+  "copy": {
+    "hook_headline": "girl don't walk in half ready",
+    "subheadline": "you're about to own THE dress. but that fit isn't complete without these.",
+    "why_section": {
+      "intro": "here's what nobody tells you about wearing a bodycon mini:",
+      "bullets": [
+        "that square neckline? regular bras will show. awkward.",
+        "bodycon fabric shows EVERYTHING. lines = ruined aesthetic.",
+        "you got the crystal details... but what about the finishing touch?"
+      ]
+    },
+    "transformation_promise": "walk in knowing you thought of everything. zero malfunctions. pure confidence. complete look.",
+    "value_anchor": "these 3 pieces? normally $100 if you bought them separate",
+    "price_reveal": "add all 3 for just $10 with your dress",
+    "savings_emphasis": "that's $90 off. basically free insurance for your night out.",
+    "urgency": "only available right now with your dress order",
+    "cta_text": "yes add the complete look (+$10)",
+    "cta_benefit": "i want zero stress and all eyes on me",
+    "decline_text": "no thanks, i'll figure it out myself",
+    "decline_consequence": "risk the wardrobe malfunction"
+  },
+  "steve_larsen_framework": {
+    "fear_layer": "addresses secret anxiety about wardrobe malfunction",
+    "desire_layer": "taps into 'all eyes on me' aspiration",
+    "identity_layer": "reinforces 'THAT girl' identity goal",
+    "practical_layer": "solves real problems (bra showing, panty lines, incomplete outfit)",
+    "value_stack": "anchors to $100 value, offers at $10 (90% perceived discount)"
+  },
+  "images": {
+    "item1": "./images/order-bump/item1.jpg",
+    "item2": "./images/order-bump/item2.jpg",
+    "item3": "./images/order-bump/item3.jpg"
+  },
+  "display_notes": {
+    "layout": "3-column grid showing all items with images",
+    "emphasis": "highlight the $100 → $10 value drop prominently",
+    "tone": "conversational Gen Z language - use 'girl', 'vibe', 'fit' naturally",
+    "visual_hierarchy": "headline → why bullets → 3 items with images → value anchor → CTA"
+  }
+}
