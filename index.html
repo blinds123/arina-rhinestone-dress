@@ -999,6 +999,127 @@ img[loading="lazy"].loaded,img[loading="lazy"]:not([data-src]){opacity:1}
       </div>
     </div>
   </div>
+
+  <!-- Product Tabs Section - MOVED TO TOP -->
+  <div style="padding:40px 20px;background:#f8f9fa;border-bottom:2px solid #e0e0e0">
+    <div style="max-width:900px;margin:0 auto">
+      <h2 style="text-align:center;font-size:28px;font-weight:800;margin-bottom:30px;color:#1a1a1a;letter-spacing:-0.02em">Product Information</h2>
+
+      <!-- Tab Navigation -->
+      <div style="display:flex;gap:8px;border-bottom:2px solid #e0e0e0;margin-bottom:30px;overflow-x:auto;-webkit-overflow-scrolling:touch">
+        <button onclick="switchTab('shipping')" id="tab-shipping" class="product-tab active" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
+          📦 Shipping
+        </button>
+        <button onclick="switchTab('returns')" id="tab-returns" class="product-tab" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
+          ↩️ Returns
+        </button>
+        <button onclick="switchTab('care')" id="tab-care" class="product-tab" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
+          ✨ Care
+        </button>
+        <button onclick="switchTab('size')" id="tab-size" class="product-tab" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
+          📏 Size Guide
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+      <div id="tab-content-shipping" class="tab-content" style="display:block">
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">Shipping Information</h3>
+        <div style="background:#fff;padding:24px;border-radius:12px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Standard Shipping (FREE):</strong> 5-7 business days</p>
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Express Shipping ($9.99):</strong> 2-3 business days</p>
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Overnight Shipping ($19.99):</strong> 1 business day</p>
+        </div>
+        <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:12px">📍 We ship to all 50 US states and international destinations</p>
+        <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:12px">📧 You'll receive tracking information via email once your order ships</p>
+        <p style="font-size:15px;line-height:1.7;color:#555">🎁 All orders ship in discreet, branded packaging</p>
+      </div>
+
+      <div id="tab-content-returns" class="tab-content" style="display:none">
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">30-Day Money-Back Guarantee</h3>
+        <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:20px">We want you to love your dress! If you're not completely satisfied, return it within 30 days for a full refund.</p>
+        <div style="background:#fff;padding:24px;border-radius:12px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Return Window:</strong> 30 days from delivery date</p>
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Condition:</strong> Unworn, unwashed, with original tags attached</p>
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Return Shipping:</strong> FREE return shipping with prepaid label</p>
+          <p style="font-size:15px;line-height:1.7;color:#555"><strong>Refund Timeline:</strong> Processed within 3-5 business days of receiving your return</p>
+        </div>
+        <p style="font-size:15px;line-height:1.7;color:#555">✅ No questions asked, hassle-free returns</p>
+      </div>
+
+      <div id="tab-content-care" class="tab-content" style="display:none">
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">Care Instructions</h3>
+        <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:20px">To keep your rhinestone dress looking stunning for years to come, follow these care instructions:</p>
+        <div style="background:#fff;padding:24px;border-radius:12px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>🧼 Washing:</strong> Hand wash in cold water with mild detergent. Turn inside out to protect rhinestones.</p>
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>🚫 Do NOT:</strong> Machine wash, tumble dry, bleach, or iron directly on rhinestones</p>
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>🌬️ Drying:</strong> Lay flat to dry in shade. Do not wring or twist the fabric.</p>
+          <p style="font-size:15px;line-height:1.7;color:#555"><strong>👗 Storage:</strong> Hang on padded hanger or fold gently. Store away from direct sunlight.</p>
+        </div>
+        <p style="font-size:15px;line-height:1.7;color:#555">💎 The rhinestones are securely attached but gentle care ensures they stay sparkling forever!</p>
+      </div>
+
+      <div id="tab-content-size" class="tab-content" style="display:none">
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">Size Guide</h3>
+        <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:20px">This dress runs true to size with a bodycon fit. If between sizes, we recommend sizing up for a more comfortable fit.</p>
+
+        <!-- Size Chart Table -->
+        <div style="overflow-x:auto;margin-bottom:24px">
+          <table style="width:100%;border-collapse:collapse;background:#fff;border:2px solid #e0e0e0;border-radius:8px;overflow:hidden">
+            <thead>
+              <tr style="background:#1B3A8C;color:#fff">
+                <th style="padding:14px;text-align:left;font-weight:700;font-size:14px">Size</th>
+                <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Bust</th>
+                <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Waist</th>
+                <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Hips</th>
+                <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Length</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #e0e0e0">
+                <td style="padding:12px;font-weight:700;color:#1a1a1a">XS</td>
+                <td style="padding:12px;text-align:center;color:#555">32-34"</td>
+                <td style="padding:12px;text-align:center;color:#555">24-26"</td>
+                <td style="padding:12px;text-align:center;color:#555">34-36"</td>
+                <td style="padding:12px;text-align:center;color:#555">33"</td>
+              </tr>
+              <tr style="border-bottom:1px solid #e0e0e0;background:#f8f9fa">
+                <td style="padding:12px;font-weight:700;color:#1a1a1a">S</td>
+                <td style="padding:12px;text-align:center;color:#555">34-36"</td>
+                <td style="padding:12px;text-align:center;color:#555">26-28"</td>
+                <td style="padding:12px;text-align:center;color:#555">36-38"</td>
+                <td style="padding:12px;text-align:center;color:#555">34"</td>
+              </tr>
+              <tr style="border-bottom:1px solid #e0e0e0">
+                <td style="padding:12px;font-weight:700;color:#1a1a1a">M</td>
+                <td style="padding:12px;text-align:center;color:#555">36-38"</td>
+                <td style="padding:12px;text-align:center;color:#555">28-30"</td>
+                <td style="padding:12px;text-align:center;color:#555">38-40"</td>
+                <td style="padding:12px;text-align:center;color:#555">35"</td>
+              </tr>
+              <tr style="border-bottom:1px solid #e0e0e0;background:#f8f9fa">
+                <td style="padding:12px;font-weight:700;color:#1a1a1a">L</td>
+                <td style="padding:12px;text-align:center;color:#555">38-40"</td>
+                <td style="padding:12px;text-align:center;color:#555">30-32"</td>
+                <td style="padding:12px;text-align:center;color:#555">40-42"</td>
+                <td style="padding:12px;text-align:center;color:#555">36"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background:#fff5f7;border-left:4px solid #1B3A8C;padding:20px;border-radius:8px">
+          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:12px"><strong>📐 How to Measure:</strong></p>
+          <ul style="margin-left:20px;color:#555;font-size:14px;line-height:1.8">
+            <li><strong>Bust:</strong> Measure around the fullest part of your chest</li>
+            <li><strong>Waist:</strong> Measure around your natural waistline</li>
+            <li><strong>Hips:</strong> Measure around the fullest part of your hips</li>
+            <li><strong>Length:</strong> Measured from shoulder to hem</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="lazyContent"></div>
 </div>
 
@@ -1630,126 +1751,6 @@ function loadRemainingContent() {
         <div id="faq6-content" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease-out">
           <div style="background:#fff;padding:20px 24px;border:2px solid #e0e0e0;border-top:none;border-radius:0 0 12px 12px;margin-top:-12px;margin-bottom:12px">
             <p style="font-size:15px;line-height:1.7;color:#555">Absolutely! This dress is perfect for nightclubs, bachelorette parties, New Year's Eve, cocktail events, birthday celebrations, date nights, and any occasion where you want to make a glamorous statement. The rhinestone embellishments photograph beautifully.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product Tabs Section -->
-    <div class="fade-in" style="padding:60px 20px;background:#fff;border-bottom:2px solid #f0f0f0">
-      <div style="max-width:900px;margin:0 auto">
-        <h2 style="text-align:center;font-size:32px;font-weight:800;margin-bottom:40px;color:#1a1a1a;letter-spacing:-0.02em">Product Information</h2>
-
-        <!-- Tab Navigation -->
-        <div style="display:flex;gap:8px;border-bottom:2px solid #e0e0e0;margin-bottom:30px;overflow-x:auto;-webkit-overflow-scrolling:touch">
-          <button onclick="switchTab('shipping')" id="tab-shipping" class="product-tab active" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
-            📦 Shipping
-          </button>
-          <button onclick="switchTab('returns')" id="tab-returns" class="product-tab" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
-            ↩️ Returns
-          </button>
-          <button onclick="switchTab('care')" id="tab-care" class="product-tab" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
-            ✨ Care
-          </button>
-          <button onclick="switchTab('size')" id="tab-size" class="product-tab" style="background:transparent;border:none;padding:16px 24px;cursor:pointer;font-size:16px;font-weight:700;color:#666;border-bottom:3px solid transparent;transition:all 0.3s;white-space:nowrap;font-family:'Montserrat',sans-serif">
-            📏 Size Guide
-          </button>
-        </div>
-
-        <!-- Tab Content -->
-        <div id="tab-content-shipping" class="tab-content" style="display:block">
-          <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">Shipping Information</h3>
-          <div style="background:#f8f9fa;padding:24px;border-radius:12px;margin-bottom:20px">
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Standard Shipping (FREE):</strong> 5-7 business days</p>
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Express Shipping ($9.99):</strong> 2-3 business days</p>
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Overnight Shipping ($19.99):</strong> 1 business day</p>
-          </div>
-          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:12px">📍 We ship to all 50 US states and international destinations</p>
-          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:12px">📧 You'll receive tracking information via email once your order ships</p>
-          <p style="font-size:15px;line-height:1.7;color:#555">🎁 All orders ship in discreet, branded packaging</p>
-        </div>
-
-        <div id="tab-content-returns" class="tab-content" style="display:none">
-          <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">30-Day Money-Back Guarantee</h3>
-          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:20px">We want you to love your dress! If you're not completely satisfied, return it within 30 days for a full refund.</p>
-          <div style="background:#f8f9fa;padding:24px;border-radius:12px;margin-bottom:20px">
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Return Window:</strong> 30 days from delivery date</p>
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Condition:</strong> Unworn, unwashed, with original tags attached</p>
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>Return Shipping:</strong> FREE return shipping with prepaid label</p>
-            <p style="font-size:15px;line-height:1.7;color:#555"><strong>Refund Timeline:</strong> Processed within 3-5 business days of receiving your return</p>
-          </div>
-          <p style="font-size:15px;line-height:1.7;color:#555">✅ No questions asked, hassle-free returns</p>
-        </div>
-
-        <div id="tab-content-care" class="tab-content" style="display:none">
-          <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">Care Instructions</h3>
-          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:20px">To keep your rhinestone dress looking stunning for years to come, follow these care instructions:</p>
-          <div style="background:#f8f9fa;padding:24px;border-radius:12px;margin-bottom:20px">
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>🧼 Washing:</strong> Hand wash in cold water with mild detergent. Turn inside out to protect rhinestones.</p>
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>🚫 Do NOT:</strong> Machine wash, tumble dry, bleach, or iron directly on rhinestones</p>
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:16px"><strong>🌬️ Drying:</strong> Lay flat to dry in shade. Do not wring or twist the fabric.</p>
-            <p style="font-size:15px;line-height:1.7;color:#555"><strong>👗 Storage:</strong> Hang on padded hanger or fold gently. Store away from direct sunlight.</p>
-          </div>
-          <p style="font-size:15px;line-height:1.7;color:#555">💎 The rhinestones are securely attached but gentle care ensures they stay sparkling forever!</p>
-        </div>
-
-        <div id="tab-content-size" class="tab-content" style="display:none">
-          <h3 style="font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a">Size Guide</h3>
-          <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:20px">This dress runs true to size with a bodycon fit. If between sizes, we recommend sizing up for a more comfortable fit.</p>
-
-          <!-- Size Chart Table -->
-          <div style="overflow-x:auto;margin-bottom:24px">
-            <table style="width:100%;border-collapse:collapse;background:#fff;border:2px solid #e0e0e0;border-radius:8px;overflow:hidden">
-              <thead>
-                <tr style="background:#1B3A8C;color:#fff">
-                  <th style="padding:14px;text-align:left;font-weight:700;font-size:14px">Size</th>
-                  <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Bust</th>
-                  <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Waist</th>
-                  <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Hips</th>
-                  <th style="padding:14px;text-align:center;font-weight:700;font-size:14px">Length</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-bottom:1px solid #e0e0e0">
-                  <td style="padding:12px;font-weight:700;color:#1a1a1a">XS</td>
-                  <td style="padding:12px;text-align:center;color:#555">32-34"</td>
-                  <td style="padding:12px;text-align:center;color:#555">24-26"</td>
-                  <td style="padding:12px;text-align:center;color:#555">34-36"</td>
-                  <td style="padding:12px;text-align:center;color:#555">33"</td>
-                </tr>
-                <tr style="border-bottom:1px solid #e0e0e0;background:#f8f9fa">
-                  <td style="padding:12px;font-weight:700;color:#1a1a1a">S</td>
-                  <td style="padding:12px;text-align:center;color:#555">34-36"</td>
-                  <td style="padding:12px;text-align:center;color:#555">26-28"</td>
-                  <td style="padding:12px;text-align:center;color:#555">36-38"</td>
-                  <td style="padding:12px;text-align:center;color:#555">34"</td>
-                </tr>
-                <tr style="border-bottom:1px solid #e0e0e0">
-                  <td style="padding:12px;font-weight:700;color:#1a1a1a">M</td>
-                  <td style="padding:12px;text-align:center;color:#555">36-38"</td>
-                  <td style="padding:12px;text-align:center;color:#555">28-30"</td>
-                  <td style="padding:12px;text-align:center;color:#555">38-40"</td>
-                  <td style="padding:12px;text-align:center;color:#555">35"</td>
-                </tr>
-                <tr style="border-bottom:1px solid #e0e0e0;background:#f8f9fa">
-                  <td style="padding:12px;font-weight:700;color:#1a1a1a">L</td>
-                  <td style="padding:12px;text-align:center;color:#555">38-40"</td>
-                  <td style="padding:12px;text-align:center;color:#555">30-32"</td>
-                  <td style="padding:12px;text-align:center;color:#555">40-42"</td>
-                  <td style="padding:12px;text-align:center;color:#555">36"</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div style="background:#fff5f7;border-left:4px solid #1B3A8C;padding:20px;border-radius:8px">
-            <p style="font-size:15px;line-height:1.7;color:#555;margin-bottom:12px"><strong>📐 How to Measure:</strong></p>
-            <ul style="margin-left:20px;color:#555;font-size:14px;line-height:1.8">
-              <li><strong>Bust:</strong> Measure around the fullest part of your chest</li>
-              <li><strong>Waist:</strong> Measure around your natural waistline</li>
-              <li><strong>Hips:</strong> Measure around the fullest part of your hips</li>
-              <li><strong>Length:</strong> Measured from shoulder to hem</li>
-            </ul>
           </div>
         </div>
       </div>
