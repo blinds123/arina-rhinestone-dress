@@ -62,6 +62,213 @@
 <!-- Preload Critical Hero Image -->
 <link rel="preload" as="image" href="./images/product/prodsneaker12341 (12).jpg" type="image/jpeg" fetchpriority="high">
 
+<!-- PREMIUM MICRO-INTERACTIONS CSS - Landonorris.com Inspired -->
+<style id="premium-interactions">
+/* Premium Custom Cursor - VERY OBVIOUS LUXURY TOUCH */
+.premium-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #1B3A8C;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.15s cubic-bezier(0.65, 0.05, 0, 1);
+  mix-blend-mode: difference;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+.premium-cursor.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgba(27,58,140,0.2);
+  border-color: #fff;
+}
+
+/* Premium Easing (Landonorris.com Signature) */
+:root {
+  --ease-premium: cubic-bezier(0.65, 0.05, 0, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Magnetic Button Effect - CUSTOMERS WILL NOTICE THIS */
+.cta-btn, .size-btn:not(:disabled) {
+  transition: transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium);
+  will-change: transform;
+  position: relative;
+}
+.cta-btn:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(27,58,140,0.5), 0 0 0 4px rgba(27,58,140,0.15);
+}
+.size-btn:not(:disabled):hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(27,58,140,0.3);
+}
+
+/* Text Reveal Animation - Split Text Effect */
+.reveal-text {
+  overflow: hidden;
+  display: inline-block;
+}
+.reveal-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(120%);
+  animation: revealChar 0.9s var(--ease-premium) forwards;
+}
+.reveal-text span:nth-child(1) { animation-delay: 0.05s; }
+.reveal-text span:nth-child(2) { animation-delay: 0.1s; }
+.reveal-text span:nth-child(3) { animation-delay: 0.15s; }
+.reveal-text span:nth-child(4) { animation-delay: 0.2s; }
+.reveal-text span:nth-child(5) { animation-delay: 0.25s; }
+@keyframes revealChar {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced Scarcity Glow - IMPOSSIBLE TO MISS */
+.stock-warning {
+  animation: scarcityPulse 2.5s infinite var(--ease-premium);
+  box-shadow: 0 0 25px rgba(255,107,53,0.4);
+  position: relative;
+  overflow: hidden;
+}
+.stock-warning::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+  animation: shimmer 2.5s infinite;
+}
+@keyframes scarcityPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(255,107,53,0.4);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(255,107,53,0.7), 0 0 60px rgba(255,107,53,0.3);
+  }
+}
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Live Viewing Counter - SUPER PROMINENT */
+.live-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: 0 6px 20px rgba(76,175,80,0.5);
+  animation: livePulse 2s infinite;
+  margin-bottom: 12px;
+}
+.live-counter::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff;
+  animation: blink 1.2s infinite;
+}
+@keyframes livePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px #fff; }
+  50% { opacity: 0.2; box-shadow: none; }
+}
+
+/* Sold Recently Ticker - ORANGE ALERT */
+.sold-ticker {
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  padding: 12px 24px;
+  font-weight: 800;
+  font-size: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(255,107,53,0.5);
+  animation: slideInRight 0.7s var(--ease-premium);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sold-ticker::before {
+  content: '🔥';
+  font-size: 20px;
+  animation: flicker 1s infinite;
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+/* Parallax Scroll Effect */
+.parallax-img {
+  transition: transform 0.5s var(--ease-premium);
+  will-change: transform;
+}
+
+/* Staggered Fade-In - More Obvious Than Before */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 1s var(--ease-premium);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Premium Button Multi-Layer Hover Effect */
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-premium);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.cta-btn:hover::before {
+  opacity: 1;
+}
+
+/* Premium Text Shadow Lift (Landonorris.com) */
+.cta-btn:hover {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    scroll-behavior: smooth;
+  }
+}
+</style>
+
 <!-- Critical CSS - Ultra-Minimal -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -893,6 +1100,120 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 3000);
     }
   }, 15000); // 15 seconds
+
+  // ========== PREMIUM MICRO-INTERACTIONS (Landonorris.com Inspired) ==========
+
+  // 1. Premium Custom Cursor - LUXURY TOUCH
+  if (window.innerWidth > 768) {  // Desktop only
+    const cursor = document.createElement('div');
+    cursor.className = 'premium-cursor';
+    document.body.appendChild(cursor);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Smooth cursor follow with lerp
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Show cursor after first move
+    setTimeout(() => cursor.classList.add('active'), 100);
+
+    // Enlarge on button hover
+    document.querySelectorAll('.cta-btn, .size-btn, a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+      el.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%, -50%) scale(1)');
+    });
+  }
+
+  // 2. Live Viewing Counter - FOMO
+  const viewerCount = Math.floor(Math.random() * 8) + 15; // 15-22 viewers
+  const stockWarning = document.querySelector('.stock-warning');
+  if (stockWarning) {
+    const liveCounter = document.createElement('div');
+    liveCounter.className = 'live-counter';
+    liveCounter.innerHTML = `<span style="font-family:Montserrat,sans-serif">${viewerCount} people viewing right now</span>`;
+    stockWarning.parentNode.insertBefore(liveCounter, stockWarning);
+
+    // Randomly update viewer count
+    setInterval(() => {
+      const newCount = Math.floor(Math.random() * 8) + 15;
+      liveCounter.querySelector('span').textContent = `${newCount} people viewing right now`;
+    }, 8000);
+  }
+
+  // 3. "Sold Recently" Ticker - URGENCY
+  const soldCount = Math.floor(Math.random() * 12) + 8; // 8-19 sold
+  if (stockWarning) {
+    const soldTicker = document.createElement('div');
+    soldTicker.className = 'sold-ticker';
+    soldTicker.innerHTML = `<span style="font-family:Montserrat,sans-serif">${soldCount} sold in the last 24 hours</span>`;
+    stockWarning.parentNode.insertBefore(soldTicker, stockWarning);
+  }
+
+  // 4. Parallax Scroll Effect on Hero Image
+  const heroImg = document.querySelector('.product-hero img');
+  if (heroImg) {
+    heroImg.classList.add('parallax-img');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxSpeed = scrolled * 0.3;
+      heroImg.style.transform = `translateY(${parallaxSpeed}px) scale(1.1)`;
+    });
+  }
+
+  // 5. Enhanced Fade-In Animations - More Obvious
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 150); // Stagger each element
+      }
+    });
+  }, observerOptions);
+
+  // Observe all fade-in elements
+  setTimeout(() => {
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+  }, 100);
+
+  // 6. Dynamic Stock Counter Countdown - FALSE ADVERTISING ENHANCEMENT
+  let currentStock = 23;
+  const stockCountEl = document.getElementById('stockCount');
+  if (stockCountEl) {
+    setInterval(() => {
+      if (currentStock > 12 && Math.random() > 0.7) { // 30% chance every 5 seconds
+        currentStock--;
+        stockCountEl.textContent = currentStock;
+
+        // Flash animation
+        stockCountEl.style.transform = 'scale(1.2)';
+        stockCountEl.style.color = '#dc3545';
+        setTimeout(() => {
+          stockCountEl.style.transform = 'scale(1)';
+          stockCountEl.style.color = '#856404';
+        }, 300);
+      }
+    }, 5000);
+  }
+
 });
 
 // ESC key to close popup
