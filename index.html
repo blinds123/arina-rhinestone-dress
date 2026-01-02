@@ -1820,12 +1820,58 @@
       }
 
       // ADD TO CART - Placeholder
-      function addToCart() {
+      async function addToCart() {
         const selectedCard = document.querySelector(".bundle-card.selected");
         const price = selectedCard.getAttribute("data-price");
-        alert(
-          `Adding to cart: $${price} bundle. (Checkout integration needed)`,
-        );
+        const bundleName = selectedCard
+          .querySelector(".bundle-title")
+          .textContent.trim()
+          .split("\n")[0];
+
+        // Show loading state
+        const btn = document.querySelector(".add-to-cart-btn");
+        const originalText = btn.textContent;
+        btn.textContent = "Processing...";
+        btn.disabled = true;
+
+        try {
+          // Call Netlify function to get SimpleSwap checkout URL
+          const response = await fetch("/.netlify/functions/buy-now", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              amountUSD: parseFloat(price),
+              product: "Arina Rhinestone Dress",
+              bundle: bundleName,
+            }),
+          });
+
+          if (!response.ok) {
+            throw new Error("Checkout failed");
+          }
+
+          const data = await response.json();
+
+          // Redirect to SimpleSwap checkout
+          if (data.checkoutUrl) {
+            window.location.href = data.checkoutUrl;
+          } else {
+            // Fallback: direct redirect to pool server
+            const params = new URLSearchParams({
+              amount: price,
+              product: "Arina Rhinestone Dress",
+              bundle: bundleName,
+            });
+            window.location.href = `https://simpleswap-automation-1.onrender.com/checkout?${params}`;
+          }
+        } catch (error) {
+          console.error("Checkout error:", error);
+          alert(
+            "Checkout is temporarily unavailable. Please try again in a moment.",
+          );
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
       }
 
       // COMPARISON SLIDER
