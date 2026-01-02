@@ -862,6 +862,24 @@
         margin-top: 2px;
       }
 
+      /* LIFESTYLE SECTIONS (Full-width images with optional TikTok overlays) */
+      .lifestyle-section {
+        width: 100%;
+        position: relative;
+      }
+
+      .lifestyle-section .img-text-image {
+        position: relative;
+      }
+
+      .lifestyle-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        max-height: 600px;
+      }
+
       /* IMAGE + TEXT SECTIONS */
       .img-text-section {
         display: flex;
@@ -1478,12 +1496,12 @@
     </style>
   </head>
   <body>
-    <!-- ANNOUNCEMENT BAR -->
+    <!-- 1. ANNOUNCEMENT BAR -->
     <div class="announcement">
       THE ORIGINAL ARINA RHINESTONE DRESS - 54% OFF ENDS TONIGHT 🔥
     </div>
 
-    <!-- HEADER -->
+    <!-- 2. HEADER -->
     <header class="site-header">
       <nav class="header-nav">
         <a href="#">HOME</a>
@@ -1498,7 +1516,42 @@
       </div>
     </header>
 
-    <!-- INFLUENCER SOCIAL PROOF BAR -->
+    <!-- 3. HERO GALLERY WITH TIKTOK OVERLAYS -->
+    <div class="gallery">
+      <div class="main-img-container">
+        <img
+          class="main-img"
+          id="mainImage"
+          src="./images/product/product-02.jpg"
+          alt="Arina Rhinestone Dress"
+        />
+        <div class="tiktok-overlay question">
+          <div class="overlay-username">MauvaP</div>
+          <p class="overlay-text">
+            does it actually stay in place when dancing? 👀
+          </p>
+        </div>
+        <div class="tiktok-overlay answer">
+          <div class="overlay-username">
+            Kileeey <span class="verified">✓</span>
+          </div>
+          <p class="overlay-text">
+            girl YES 🔥 danced all night zero adjustments
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. PROMO BANNER -->
+    <div class="promo-banner">
+      <div>
+        <span class="promo-stars">★★★★★</span>
+        <span>4.9/5 Rated by 4500+ Women</span>
+      </div>
+      <div class="promo-logo">ARINA<span>DRESS</span></div>
+    </div>
+
+    <!-- 4.5 INFLUENCER SOCIAL PROOF BAR -->
     <div class="influencer-proof">
       <div class="influencer-avatars">
         <img
@@ -1523,84 +1576,47 @@
       </p>
     </div>
 
-    <!-- GALLERY -->
-    <div class="gallery">
-      <div class="main-img-container">
-        <img
-          class="main-img"
-          id="mainImage"
-          src="./images/product/product-02.jpg"
-          alt="Arina Rhinestone Dress"
-        />
-
-        <!-- TikTok Overlay (product-01.jpg has overlay) -->
-        <div class="tiktok-overlay question">
-          <div class="overlay-username">MauvaP</div>
-          <p class="overlay-text">
-            does it actually stay in place when dancing? 👀
-          </p>
-        </div>
-        <div class="tiktok-overlay answer">
-          <div class="overlay-username">
-            Kileeey <span class="verified">✓</span>
-          </div>
-          <p class="overlay-text">
-            girl YES 🔥 danced all night zero adjustments
-          </p>
-        </div>
-      </div>
-
-      <!-- PROMO BANNER -->
-      <div class="promo-banner">
-        <div>
-          <span class="promo-stars">★★★★★</span>
-          <span>4.9/5 Rated by 4500+ Women</span>
-        </div>
-        <div class="promo-logo">ARINA<span>DRESS</span></div>
-      </div>
-
-      <!-- THUMBNAIL STRIP -->
-      <div class="thumb-container" id="thumbs">
-        <img
-          class="thumb active"
-          src="./images/product/product-02.jpg"
-          onclick="switchImage(this)"
-          alt=""
-        />
-        <img
-          class="thumb"
-          src="./images/product/product-01.jpg"
-          onclick="switchImage(this)"
-          alt=""
-        />
-        <img
-          class="thumb"
-          src="./images/product/product-03.jpg"
-          onclick="switchImage(this)"
-          alt=""
-        />
-        <img
-          class="thumb"
-          src="./images/product/product-04.jpg"
-          onclick="switchImage(this)"
-          alt=""
-        />
-        <img
-          class="thumb"
-          src="./images/product/product-05.jpg"
-          onclick="switchImage(this)"
-          alt=""
-        />
-        <img
-          class="thumb"
-          src="./images/product/product-06.jpg"
-          onclick="switchImage(this)"
-          alt=""
-        />
-      </div>
+    <!-- 5. THUMBNAIL STRIP -->
+    <div class="thumb-container" id="thumbs">
+      <img
+        class="thumb active"
+        src="./images/product/product-02.jpg"
+        onclick="switchImage(this)"
+        alt=""
+      />
+      <img
+        class="thumb"
+        src="./images/product/product-01.jpg"
+        onclick="switchImage(this)"
+        alt=""
+      />
+      <img
+        class="thumb"
+        src="./images/product/product-03.jpg"
+        onclick="switchImage(this)"
+        alt=""
+      />
+      <img
+        class="thumb"
+        src="./images/product/product-04.jpg"
+        onclick="switchImage(this)"
+        alt=""
+      />
+      <img
+        class="thumb"
+        src="./images/product/product-05.jpg"
+        onclick="switchImage(this)"
+        alt=""
+      />
+      <img
+        class="thumb"
+        src="./images/product/product-06.jpg"
+        onclick="switchImage(this)"
+        alt=""
+      />
     </div>
 
-    <!-- PRODUCT INFO -->
+    <!-- 6. PRODUCT INFO BLOCK -->
     <div class="product-info">
       <h1>Arina Rhinestone Dress</h1>
       <div class="review-line">
@@ -1611,6 +1627,8 @@
         "obsessed with this dress!! the navy blue with gold rhinestones is
         literally so stunning 🎉" - Emma K.
       </div>
+
+      <!-- 7. PRICING BLOCK -->
       <div class="price-row">
         <span class="price">$19</span>
         <span class="old-price">$129</span>
@@ -1622,7 +1640,7 @@
         </span>
       </div>
 
-      <!-- FEATURE CARDS -->
+      <!-- 8. FEATURE CARDS (4 cards) -->
       <div class="feature-cards">
         <div class="feature-card">
           <span class="material-symbols-outlined">check_circle</span>
@@ -1643,127 +1661,9 @@
       </div>
     </div>
 
-    <!-- TIKTOK COMMENTS SECTION - Pain Point: Quality -->
-    <div class="tiktok-chat-section">
-      <div class="tiktok-chat-card">
-        <div class="tiktok-overlay question">
-          <div class="overlay-username">fashiongirlxo</div>
-          <p class="overlay-text">
-            is the quality good or does it look cheap in person?? 🤔
-          </p>
-        </div>
-        <div class="tiktok-overlay answer">
-          <div class="overlay-username">
-            ArinaDress <span class="verified">✓</span>
-          </div>
-          <p class="overlay-text">
-            premium rhinestones, not that cheap glue-on stuff. zero fallout
-            after 10+ wears 💎
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- COMPARISON SLIDER -->
-    <div class="comparison-section">
-      <h2 class="comparison-title">
-        Basic Black Dress vs. Navy Rhinestone Dress
-      </h2>
-      <p class="comparison-subtitle">
-        We've all worn boring black... time to upgrade
-      </p>
-
-      <div class="comparison-slider">
-        <div class="comparison-slider__label-old">THE OLD WAY</div>
-        <div class="comparison-slider__label-new">THE NEW WAY</div>
-        <div class="comparison-slider__background">
-          <img
-            src="./images/product/product-02.jpg"
-            alt="Arina Rhinestone Dress"
-          />
-        </div>
-        <div class="comparison-slider__overlay">
-          <img src="./images/product/product-07.jpg" alt="Basic dress" />
-        </div>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value="50"
-          class="comparison-slider__input"
-          aria-label="Comparison slider"
-        />
-        <div class="comparison-slider__handle"></div>
-      </div>
-    </div>
-
-    <!-- TIKTOK COMMENTS SECTION - Pain Point: Body Type -->
-    <div class="tiktok-chat-section">
-      <div class="tiktok-chat-card">
-        <div class="tiktok-overlay question">
-          <div class="overlay-username">curvyqueenSarah</div>
-          <p class="overlay-text">
-            im a size 14... will this actually look good on my body type? 👀
-          </p>
-        </div>
-        <div class="tiktok-overlay answer">
-          <div class="overlay-username">
-            Jessicaaa <span class="verified">✓</span>
-          </div>
-          <p class="overlay-text">
-            size 16 here and i look STUNNING. the stretch fabric hugs all the
-            right places 🔥 trust me
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- TIKTOK COMMENTS SECTION - Pain Point: Bra -->
-    <div class="tiktok-chat-section">
-      <div class="tiktok-chat-card">
-        <div class="tiktok-overlay question">
-          <div class="overlay-username">bigchestprobs</div>
-          <p class="overlay-text">
-            ok but can you wear a bra with this??? im a 36DD 😅
-          </p>
-        </div>
-        <div class="tiktok-overlay answer">
-          <div class="overlay-username">
-            ArinaDress <span class="verified">✓</span>
-          </div>
-          <p class="overlay-text">
-            built-in support babe! the $59 bundle includes invisible bra cups
-            that hold EVERYTHING 💪
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- TIKTOK COMMENTS SECTION - Pain Point: Comfort -->
-    <div class="tiktok-chat-section">
-      <div class="tiktok-chat-card">
-        <div class="tiktok-overlay question">
-          <div class="overlay-username">allnightdancer</div>
-          <p class="overlay-text">
-            is it actually comfortable for hours or will i be dying by midnight?
-            😭
-          </p>
-        </div>
-        <div class="tiktok-overlay answer">
-          <div class="overlay-username">
-            PartyGirl_Mia <span class="verified">✓</span>
-          </div>
-          <p class="overlay-text">
-            wore it from 9pm to 4am NO issues. the stretch is unreal and the
-            rhinestones dont scratch ✨
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- BUNDLE SECTION -->
+    <!-- 10. BUNDLE SECTION (Lime Background) -->
     <div class="bundle-section" id="bundles">
-      <h2 class="bundle-heading">How Do You Want to Show Up? 💎</h2>
+      <h2 class="bundle-heading">SELECT YOUR OPTION 💎</h2>
 
       <!-- Bundle 1: Single Dress $19 -->
       <div
@@ -1775,7 +1675,7 @@
         <div class="bundle-top">
           <div class="bundle-radio"></div>
           <div class="bundle-info">
-            <div class="bundle-title">1 DRESS - Try It Risk-Free</div>
+            <div class="bundle-title">Buy 1 - Try It Risk-Free</div>
             <span class="bundle-badge">SAVE $110</span>
             <div class="bundle-ideal-for">
               Perfect for testing the waters 💧
@@ -1799,7 +1699,7 @@
         <div class="bundle-top">
           <div class="bundle-radio"></div>
           <div class="bundle-info">
-            <div class="bundle-title">2 DRESSES - Best Value Bundle</div>
+            <div class="bundle-title">Buy 2 & Save - Best Value</div>
             <span class="bundle-badge popular"
               >BEST VALUE ⭐ FREE ACCESSORY</span
             >
@@ -1817,13 +1717,13 @@
         </div>
       </div>
 
-      <!-- ADD TO CART -->
+      <!-- 11. ADD TO CART BUTTON -->
       <button class="add-to-cart-btn" onclick="handleAddToCart()">
-        YES—MAKE ME UNFORGETTABLE ($19)
+        $19.00 ADD TO CART
       </button>
     </div>
 
-    <!-- ORDER BUMP POPUP -->
+    <!-- 10.5 ORDER BUMP POPUP -->
     <div id="orderBumpPopup" class="order-bump-popup" style="display: none">
       <div class="order-bump-overlay" onclick="closeOrderBump()"></div>
       <div class="order-bump-modal">
@@ -1865,7 +1765,7 @@
       </div>
     </div>
 
-    <!-- DELIVERY TIMELINE -->
+    <!-- 12. DELIVERY TIMELINE -->
     <div class="delivery-timeline">
       <p class="delivery-order-by">
         Order within the next hour to get it by <strong>January 8th</strong>
@@ -1880,22 +1780,55 @@
         <div class="timeline-step">
           <span class="step-icon">📦</span>
           <span class="step-day">DAY 2</span>
-          <span class="step-label">Shipped</span>
+          <span class="step-label">Order Ready</span>
         </div>
         <div class="timeline-connector"></div>
         <div class="timeline-step">
           <span class="step-icon">🎁</span>
-          <span class="step-day">DAY 5</span>
+          <span class="step-day">DAY 4</span>
           <span class="step-label">Delivered</span>
         </div>
       </div>
     </div>
 
-    <!-- PROBLEM SECTION -->
+    <!-- 14. COMPARISON SECTION (Before/After Slider) -->
+    <div class="comparison-section">
+      <h2 class="comparison-title">
+        Basic Black Dress vs. Navy Rhinestone Glam
+      </h2>
+      <p class="comparison-subtitle">
+        We've all worn boring black dresses... time to upgrade to unforgettable.
+      </p>
+
+      <div class="comparison-slider">
+        <div class="comparison-slider__label-old">THE OLD</div>
+        <div class="comparison-slider__label-new">THE NEW</div>
+        <div class="comparison-slider__background">
+          <img
+            src="./images/product/product-02.jpg"
+            alt="Arina Rhinestone Dress"
+          />
+        </div>
+        <div class="comparison-slider__overlay">
+          <img src="./images/product/product-07.jpg" alt="Basic dress" />
+        </div>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="comparison-slider__input"
+          aria-label="Comparison slider"
+        />
+        <div class="comparison-slider__handle"></div>
+      </div>
+    </div>
+
+    <!-- 15. PROBLEM SECTION (Dark Background) -->
     <div class="problem-section">
       <div class="problem-container">
         <h2 class="problem-heading">
-          Tired of Feeling Invisible at Parties? Same. 😔
+          Why Women Are Ditching Basic Black Dresses 🚫
         </h2>
         <ul class="problem-list">
           <li>
@@ -1922,30 +1855,35 @@
       </div>
     </div>
 
-    <!-- LIFESTYLE IMAGE 1 -->
-    <div class="img-text-section">
-      <div class="img-text-image">
+    <!-- 16. LIFESTYLE IMAGE WITH TIKTOK OVERLAY -->
+    <div class="lifestyle-section">
+      <div class="img-text-image" style="position: relative">
         <img
           src="./images/product/product-03.jpg"
-          alt="Turn Heads in Navy Blue Sparkle"
+          alt="Arina Rhinestone Dress Lifestyle"
         />
-      </div>
-      <div class="img-text-content">
-        <h2>Turn Heads in Navy Blue Sparkle</h2>
-        <p class="lead">Feel unforgettable in every moment</p>
-        <p>
-          Our Arina Rhinestone Dress was designed for women who want to stand
-          out. Navy blue elegance meets gold rhinestone glamour - perfect for
-          clubs, parties, and those moments when you want all eyes on you.
-        </p>
+        <div class="tiktok-overlay question" style="top: 15px; left: 15px">
+          <div class="overlay-username">fashiongirlxo</div>
+          <p class="overlay-text">
+            is the quality good or does it look cheap in person?? 🤔
+          </p>
+        </div>
+        <div class="tiktok-overlay answer" style="bottom: 15px; right: 15px">
+          <div class="overlay-username">
+            ArinaDress <span class="verified">✓</span>
+          </div>
+          <p class="overlay-text">
+            premium rhinestones, not that cheap glue-on stuff. zero fallout 💎
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- SOLUTION SECTION -->
+    <!-- 17. SOLUTION SECTION (Light Background) -->
     <div class="solution-section">
       <div class="solution-container">
         <h2 class="solution-heading">
-          With Arina, You're THE Dress Everyone's Talking About ✨
+          The Attention You Deserve, Comfort Included ✨
         </h2>
         <ul class="solution-list">
           <li>
@@ -1972,16 +1910,185 @@
       </div>
     </div>
 
-    <!-- LIFESTYLE IMAGE 2 -->
-    <div class="img-text-section">
-      <div class="img-text-image">
-        <img src="./images/product/product-05.jpg" alt="The Arina Effect" />
+    <!-- 18. LIFESTYLE IMAGE WITH TIKTOK OVERLAY -->
+    <div class="lifestyle-section">
+      <div class="img-text-image" style="position: relative">
+        <img
+          src="./images/product/product-04.jpg"
+          alt="Arina Rhinestone Dress Lifestyle"
+        />
+        <div class="tiktok-overlay question" style="top: 15px; left: 15px">
+          <div class="overlay-username">curvyqueenSarah</div>
+          <p class="overlay-text">
+            im a size 14... will this actually look good on my body type? 👀
+          </p>
+        </div>
+        <div class="tiktok-overlay answer" style="bottom: 15px; right: 15px">
+          <div class="overlay-username">
+            Jessicaaa <span class="verified">✓</span>
+          </div>
+          <p class="overlay-text">
+            size 16 here and i look STUNNING. the stretch fabric hugs 🔥
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- FAQ ACCORDION -->
+    <!-- 19. STORY SECTION -->
+    <div class="img-text-section">
+      <div class="img-text-image">
+        <img src="./images/product/product-05.jpg" alt="The Arina Story" />
+      </div>
+      <div class="img-text-content">
+        <h2>There Was Nothing Like This On The Market...</h2>
+        <p>
+          We were tired of showing up to events in the same basic dresses
+          everyone else was wearing. Black, boring, forgettable. The sparkling
+          options? Either looked cheap or cost a fortune.
+        </p>
+        <p>
+          So we created the Arina Rhinestone Dress.
+          <strong>Premium rhinestones that actually stay on</strong>, a
+          flattering bodycon fit that works for EVERY body type, and a navy +
+          gold color combo that's impossible to ignore.
+        </p>
+        <p>
+          <em
+            >This is the dress you wish you had at every party you ever went
+            to.</em
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- 20. LIFESTYLE IMAGE -->
+    <div class="lifestyle-section">
+      <div class="img-text-image">
+        <img
+          src="./images/product/product-06.jpg"
+          alt="Arina Rhinestone Dress"
+        />
+      </div>
+    </div>
+
+    <!-- 21. VALUE SECTION (Body Positive Copy) -->
+    <div class="solution-section">
+      <div class="solution-container">
+        <h2 class="solution-heading">
+          All The Sparkle, None Of The Struggle 💎
+        </h2>
+        <p style="font-size: 17px; margin-bottom: 20px; color: #333">
+          We didn't design this dress for Instagram models. We designed it for
+          real women who want to feel unforgettable without sacrificing comfort
+          or breaking the bank.
+        </p>
+        <ul class="solution-list">
+          <li>
+            <span class="solution-emoji">💖</span> It works for clubs, dates, or
+            formal events.
+          </li>
+          <li>
+            <span class="solution-emoji">💖</span> It gives you the "main
+            character" energy without the drama.
+          </li>
+          <li>
+            <span class="solution-emoji">💖</span> It fits how your body moves —
+            not the other way around.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 22. FULL BANNER 1 (Dark Overlay) -->
+    <div
+      class="full-banner"
+      style="background-image: url(&quot;./images/product/product-01.jpg&quot;)"
+    >
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h2 class="banner-heading">
+          PREMIUM RHINESTONES. UNFORGETTABLE NIGHTS.
+        </h2>
+        <p class="banner-subheading">
+          Navy + Gold. The color combo that makes heads turn.
+        </p>
+      </div>
+    </div>
+
+    <!-- 23. ONE SIZE SECTION (Image + Text) -->
+    <div class="img-text-section">
+      <div class="img-text-image">
+        <img src="./images/product/product-03.jpg" alt="Fits Every Body" />
+      </div>
+      <div class="img-text-content">
+        <h2>FITS EVERY BODY</h2>
+        <p class="lead">From XS to 3XL, this dress adjusts to YOUR curves.</p>
+        <p>
+          The stretch fabric hugs all the right places while the bodycon
+          silhouette creates that hourglass shape naturally. Whether you're
+          petite or plus-size, you'll look like the dress was made for YOU.
+        </p>
+      </div>
+    </div>
+
+    <!-- 24. FOUNDER SECTION (Image + Text) -->
+    <div class="img-text-section" style="background: var(--gray-light)">
+      <div class="img-text-image">
+        <img src="./images/product/product-02.jpg" alt="Our Story" />
+      </div>
+      <div class="img-text-content">
+        <h2>Why We Created Arina 💎</h2>
+        <p>
+          After one too many nights feeling invisible in basic black dresses
+          while other girls got all the attention, we decided enough was enough.
+        </p>
+        <p>
+          We spent months testing rhinestone quality, perfecting the fit, and
+          finding the EXACT navy + gold combination that catches light
+          perfectly. The result? A dress that makes you feel like the main
+          character—because you are.
+        </p>
+      </div>
+    </div>
+
+    <!-- 25. DATE NIGHT SECTION (Image + Text) -->
+    <div class="img-text-section">
+      <div class="img-text-image">
+        <img src="./images/product/product-05.jpg" alt="Date Night Ready" />
+      </div>
+      <div class="img-text-content">
+        <h2>The Date Night Dress You'll Actually Love</h2>
+        <p class="lead">Make him forget his own name.</p>
+        <p>
+          Whether it's a first date or your anniversary, the Arina Dress creates
+          that "wow" moment the second you walk in. The slit is flirty but
+          classy, and the rhinestones catch candlelight perfectly.
+        </p>
+      </div>
+    </div>
+
+    <!-- 26. SUPPORT SECTION (Image + Text) -->
+    <div class="img-text-section" style="background: var(--gray-light)">
+      <div class="img-text-image">
+        <img src="./images/product/product-04.jpg" alt="For Every Woman" />
+      </div>
+      <div class="img-text-content">
+        <h2>Confidence for Every Woman, Every Chapter</h2>
+        <p>
+          Whether you're 21 and hitting the clubs, 35 and going to your high
+          school reunion, or 50 and celebrating a milestone birthday—this dress
+          is for you.
+        </p>
+        <p>
+          No age limit on feeling unforgettable. No size limit on looking
+          stunning. Just pure, unapologetic confidence.
+        </p>
+      </div>
+    </div>
+
+    <!-- 27. FAQ SECTION (Lime Background) -->
     <div class="faq-section" id="faq">
-      <h2>Your Questions, Answered 💬</h2>
+      <h2>FREQUENTLY ASKED</h2>
       <div class="faq-grid">
         <div class="faq-list">
           <div class="faq-item">
@@ -2067,7 +2174,149 @@
       </div>
     </div>
 
-    <!-- REVIEWS GRID -->
+    <!-- 28. HOW IT WORKS SECTION -->
+    <div class="solution-section" style="background: var(--white)">
+      <div class="solution-container">
+        <h2 class="solution-heading" style="text-align: center">
+          HOW IT WORKS
+        </h2>
+        <ol
+          style="
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: step-counter;
+          "
+        >
+          <li
+            style="
+              font-size: 17px;
+              line-height: 1.6;
+              margin-bottom: 16px;
+              color: #333;
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+            "
+          >
+            <span
+              style="
+                background: var(--lime);
+                color: var(--dark);
+                font-weight: 700;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+              >1</span
+            >
+            Choose your bundle (1 dress or 2 & save!)
+          </li>
+          <li
+            style="
+              font-size: 17px;
+              line-height: 1.6;
+              margin-bottom: 16px;
+              color: #333;
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+            "
+          >
+            <span
+              style="
+                background: var(--lime);
+                color: var(--dark);
+                font-weight: 700;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+              >2</span
+            >
+            Select your size (stretch fabric = forgiving fit)
+          </li>
+          <li
+            style="
+              font-size: 17px;
+              line-height: 1.6;
+              margin-bottom: 16px;
+              color: #333;
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+            "
+          >
+            <span
+              style="
+                background: var(--lime);
+                color: var(--dark);
+                font-weight: 700;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+              >3</span
+            >
+            Receive your dress in 3-5 days
+          </li>
+          <li
+            style="
+              font-size: 17px;
+              line-height: 1.6;
+              margin-bottom: 16px;
+              color: #333;
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+            "
+          >
+            <span
+              style="
+                background: var(--lime);
+                color: var(--dark);
+                font-weight: 700;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+              >4</span
+            >
+            Become the girl everyone remembers 💎
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 29. FULL BANNER 2 (Dark Overlay) -->
+    <div
+      class="full-banner"
+      style="background-image: url(&quot;./images/product/product-06.jpg&quot;)"
+    >
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h2 class="banner-heading">MADE TO MOVE WITH YOU.</h2>
+        <p class="banner-subheading">Stunning, not Stiff. Big difference.</p>
+      </div>
+    </div>
+
+    <!-- 30. REVIEWS GRID -->
     <div class="reviews-section">
       <h2>SOME AMAZING REVIEWS</h2>
       <div class="reviews-grid" id="reviewsGrid">
@@ -2075,63 +2324,37 @@
       </div>
     </div>
 
-    <!-- MEDIA LOGOS BAR -->
-    <div class="media-logos-section">
-      <p class="media-logos-heading">AS SEEN ON</p>
-      <div class="media-logos">
-        <div class="media-logo">VOGUE</div>
-        <div class="media-logo">VH1</div>
-        <div class="media-logo">TIKTOK</div>
-        <div class="media-logo">INSTAGRAM</div>
-      </div>
-    </div>
-
-    <!-- FULL BANNER 1 -->
-    <div
-      class="full-banner"
-      style="background-image: url(&quot;./images/product/product-04.jpg&quot;)"
-    >
-      <div class="banner-overlay"></div>
-      <div class="banner-content">
-        <h2 class="banner-heading">
-          PREMIUM RHINESTONES. UNFORGETTABLE NIGHTS.
-        </h2>
-        <p class="banner-subheading">
-          Join thousands of women who refuse to blend in
-        </p>
-      </div>
-    </div>
-
-    <!-- GUARANTEE SECTION -->
+    <!-- 31. GUARANTEE SECTION -->
     <div class="guarantee-section">
       <div class="guarantee-grid">
         <div class="guarantee-image">
           <img src="./images/product/product-01.jpg" alt="30-Day Guarantee" />
         </div>
         <div class="guarantee-content">
-          <h2 class="guarantee-heading">30-Day Risk-Free Trial</h2>
+          <h2 class="guarantee-heading">
+            Your Style, Your Rules. 30-Day Risk-Free Trial.
+          </h2>
           <p class="guarantee-body">
             Try the Arina Rhinestone Dress risk-free for 30 days. If you don't
             feel absolutely unforgettable, return it for a full refund. No
             questions asked.
           </p>
-          <p class="guarantee-promise">(But you will. 😉)</p>
+          <p class="guarantee-promise">We're betting you'll keep it. 😉</p>
         </div>
       </div>
     </div>
 
-    <!-- FOOTER BANNER -->
+    <!-- 32. FOOTER BANNER -->
     <div class="footer-banner">
       <h2 class="footer-banner-heading">
-        Ready to Be The Girl Everyone Remembers? 💎
+        Made For You + All The Girls Who Refuse To Blend In 💎
       </h2>
       <p class="footer-banner-subheading">
-        Stop scrolling. Start sparkling. Your unforgettable moment is one click
-        away.
+        A love letter to every woman who's ready to be the main character.
       </p>
     </div>
 
-    <!-- FOOTER -->
+    <!-- 33. FOOTER -->
     <footer class="site-footer">
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
@@ -2164,7 +2387,7 @@
         const price = card.getAttribute("data-price");
         const ctaButton = document.querySelector(".add-to-cart-btn");
         if (ctaButton) {
-          ctaButton.textContent = `YES—MAKE ME UNFORGETTABLE ($${price})`;
+          ctaButton.textContent = `$${price}.00 ADD TO CART`;
         }
       }
 
