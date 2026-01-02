@@ -1,0 +1,361 @@
+{
+  "testName": "SimpleSwap Checkout Flow End-to-End Test",
+  "testDate": "2026-01-03",
+  "testedURL": "https://auralo.store/",
+  "localFilePath": "/Users/nelsonchan/Downloads/arina Rhinestone Dress/index.html",
+  "overallStatus": "PARTIALLY_IMPLEMENTED",
+  "completionPercentage": 40,
+  "summary": {
+    "bundleSelectionUI": "WORKING",
+    "priceUpdates": "WORKING",
+    "addToCartFunction": "PLACEHOLDER_ONLY",
+    "orderBumpPopup": "NOT_IMPLEMENTED",
+    "checkoutRedirect": "NOT_IMPLEMENTED",
+    "netlifyFunction": "IMPLEMENTED_BUT_NOT_WIRED",
+    "simpleswapIntegration": "INCOMPLETE"
+  },
+  "testSequence": [
+    {
+      "stepNumber": 1,
+      "stepName": "Bundle Selection Verification",
+      "status": "PASS",
+      "details": {
+        "description": "Verify all 3 bundle options are visible and selectable",
+        "bundleOptions": [
+          {
+            "bundleNumber": 1,
+            "name": "PRE-ORDER - The Wait-and-Save",
+            "price": "$19",
+            "originalPrice": "$129",
+            "savings": "$110 (85% OFF)",
+            "shipping": "Ships in 2-3 Weeks",
+            "description": "Planning ahead queens who want the deal",
+            "htmlElement": "bundle-card[data-price='19']",
+            "radiobuttonStatus": "Visible and selectable"
+          },
+          {
+            "bundleNumber": 2,
+            "name": "INSTANT ICON - Ship Today",
+            "price": "$59",
+            "originalPrice": "$129",
+            "savings": "$70 (54% OFF)",
+            "badge": "MOST POPULAR",
+            "shipping": "Ships TODAY - Free Shipping",
+            "description": "Last-minute event? Need it ASAP?",
+            "htmlElement": "bundle-card[data-price='59']",
+            "radiobuttonStatus": "Visible and selectable",
+            "defaultSelected": true
+          },
+          {
+            "bundleNumber": 3,
+            "name": "COMPLETE THE LOOK - Full Glam Bundle",
+            "price": "$69",
+            "originalPrice": "$229",
+            "savings": "$160 (70% OFF)",
+            "includes": "Dress + Bra Cups + Thong + Earrings",
+            "description": "Zero malfunctions. Pure confidence. Total package.",
+            "htmlElement": "bundle-card[data-price='69']",
+            "radiobuttonStatus": "Visible and selectable"
+          }
+        ],
+        "radioButtonFeedback": "CONFIRMED - Selected bundle shows filled radio button and black border",
+        "result": "All 3 bundles visible, pricing correct, selection feedback working"
+      }
+    },
+    {
+      "stepNumber": 2,
+      "stepName": "Add to Cart Button Click",
+      "status": "FAIL",
+      "details": {
+        "description": "Click 'YES—MAKE ME UNFORGETTABLE ($59)' button to add bundle to cart",
+        "buttonElement": {
+          "htmlClass": "add-to-cart-btn",
+          "expectedText": "YES—MAKE ME UNFORGETTABLE ($59)",
+          "buttonColor": "Black background with white text",
+          "location": "Below all bundle options, above delivery timeline"
+        },
+        "currentBehavior": "Displays JavaScript alert() placeholder",
+        "expectedBehavior": "Should trigger order bump popup or redirect to checkout",
+        "issue": "BLOCKING - addToCart() function contains only: alert(`Adding to cart: $${price} bundle. (Checkout integration needed)`)",
+        "codeLocation": {
+          "file": "/Users/nelsonchan/Downloads/arina Rhinestone Dress/index.html",
+          "lineNumber": 1823
+        },
+        "result": "FAIL - Function is incomplete placeholder"
+      }
+    },
+    {
+      "stepNumber": 3,
+      "stepName": "Order Bump Popup Display",
+      "status": "FAIL",
+      "details": {
+        "description": "Verify order bump popup appears with 3 accessory items and pricing",
+        "expectedPopupContent": {
+          "title": "Complete Your Look",
+          "description": "Add our best-selling accessories bundle",
+          "items": [
+            "Rhinestone Bra Cups",
+            "Matching Thong",
+            "Gold Chandelier Earrings"
+          ],
+          "bundlePrice": "$10",
+          "buttonAccept": "yes, make me unforgettable (+$10)",
+          "buttonDecline": "no thanks, just the dress"
+        },
+        "currentImplementation": "NOT_FOUND",
+        "htmlSearch": "No HTML elements found for order bump popup",
+        "jsSearch": "No JavaScript functions found for order bump logic",
+        "issue": "BLOCKING - Order bump popup not implemented",
+        "result": "FAIL - No popup HTML or JavaScript implementation found"
+      }
+    },
+    {
+      "stepNumber": 4,
+      "stepName": "Checkout Redirect to SimpleSwap",
+      "status": "FAIL",
+      "details": {
+        "description": "Verify redirect to SimpleSwap checkout with correct order data",
+        "expectedRedirectURL": "https://simpleswap-automation-1.onrender.com/checkout?data=...",
+        "expectedURLParameters": {
+          "productName": "Arina Rhinestone Dress",
+          "bundlePrice": "59 or 69 (depending on order bump)",
+          "orderBumpIncluded": "boolean",
+          "orderBumpPrice": 10
+        },
+        "currentImplementation": "NOT_FOUND",
+        "issue": "BLOCKING - No redirect mechanism implemented",
+        "netlifyFunction": {
+          "status": "EXISTS",
+          "file": "/Users/nelsonchan/Downloads/arina Rhinestone Dress/netlify/functions/buy-now.js",
+          "endpoint": "/.netlify/functions/buy-now",
+          "method": "POST",
+          "notConnectedFrom": "Frontend addToCart() function"
+        },
+        "result": "FAIL - No checkout redirect mechanism"
+      }
+    },
+    {
+      "stepNumber": 5,
+      "stepName": "Pricing Verification Across Bundles",
+      "status": "PARTIAL",
+      "details": {
+        "description": "Verify correct prices are passed to checkout for each bundle option",
+        "priceVerification": [
+          {
+            "bundleName": "PRE-ORDER",
+            "expectedPrice": "$19",
+            "htmlDataAttribute": "data-price='19'",
+            "status": "VERIFIED - Attribute exists"
+          },
+          {
+            "bundleName": "INSTANT ICON",
+            "expectedPrice": "$59",
+            "htmlDataAttribute": "data-price='59'",
+            "status": "VERIFIED - Attribute exists"
+          },
+          {
+            "bundleName": "COMPLETE LOOK",
+            "expectedPrice": "$69",
+            "htmlDataAttribute": "data-price='69'",
+            "status": "VERIFIED - Attribute exists"
+          }
+        ],
+        "buttonTextUpdate": {
+          "status": "WORKING",
+          "function": "selectBundle()",
+          "behavior": "Updates button text to match selected bundle price"
+        },
+        "checkoutPricePassage": "NOT_IMPLEMENTED - No mechanism to pass prices to SimpleSwap",
+        "result": "PARTIAL - Prices stored in HTML attributes, button text updates, but no checkout integration"
+      }
+    },
+    {
+      "stepNumber": 6,
+      "stepName": "Netlify Function Integration",
+      "status": "IMPLEMENTED_NOT_WIRED",
+      "details": {
+        "description": "Verify Netlify function exists and is properly configured",
+        "functionFile": "netlify/functions/buy-now.js",
+        "functionEndpoint": "/.netlify/functions/buy-now",
+        "httpMethod": "POST",
+        "functionImplementation": {
+          "status": "COMPLETE",
+          "features": [
+            "Checks for POST method (405 error if not POST)",
+            "Validates amountUSD parameter in request body",
+            "Proxies request to https://simpleswap-automation-1.onrender.com/buy-now",
+            "Handles CORS headers properly (Access-Control-Allow-Origin: *)",
+            "Error handling with try/catch"
+          ]
+        },
+        "expectedPayload": {
+          "amountUSD": "number (e.g., 59, 69, 79)"
+        },
+        "callFromFrontend": "NOT_FOUND - No code in index.html calls this function",
+        "netlifyToml": {
+          "status": "CORRECT",
+          "functionPath": "netlify/functions",
+          "publish": "."
+        },
+        "issue": "Function exists but frontend has no code to call it",
+        "result": "IMPLEMENTED_NOT_WIRED - Function ready but not integrated"
+      }
+    }
+  ],
+  "criticalBlockingIssues": [
+    {
+      "issue": "addToCart() Function Placeholder",
+      "severity": "CRITICAL",
+      "location": "index.html:1823",
+      "currentCode": "function addToCart() { const selectedCard = document.querySelector('.bundle-card.selected'); const price = selectedCard.getAttribute('data-price'); alert(`Adding to cart: $${price} bundle. (Checkout integration needed)`); }",
+      "impact": "Clicking 'Add to Cart' only shows an alert, no checkout flow is triggered",
+      "requiredFix": "Implement full checkout flow: show order bump popup → handle accept/decline → redirect to SimpleSwap"
+    },
+    {
+      "issue": "Order Bump Popup Not Implemented",
+      "severity": "CRITICAL",
+      "location": "Not found in codebase",
+      "impact": "No order bump upsell opportunity, cannot add accessories",
+      "requiredFix": "Create HTML for popup with 3 accessory items, implement show/hide logic, add event handlers for accept/decline buttons"
+    },
+    {
+      "issue": "SimpleSwap Checkout Redirect Missing",
+      "severity": "CRITICAL",
+      "location": "Not implemented",
+      "impact": "Cannot redirect users to payment gateway",
+      "requiredFix": "Implement function to serialize order data and redirect to SimpleSwap with proper query parameters"
+    },
+    {
+      "issue": "Netlify Function Not Called from Frontend",
+      "severity": "CRITICAL",
+      "location": "Frontend code missing",
+      "impact": "Even though function exists, it's not wired to be called by addToCart()",
+      "requiredFix": "Add fetch() call in addToCart() to invoke /.netlify/functions/buy-now endpoint"
+    }
+  ],
+  "completedComponents": [
+    {
+      "component": "Bundle Selection UI",
+      "status": "WORKING",
+      "details": "All 3 bundle options visible with correct pricing and styling"
+    },
+    {
+      "component": "Radio Button Selection",
+      "status": "WORKING",
+      "details": "Visual feedback (filled radio button, border highlighting) works correctly"
+    },
+    {
+      "component": "Price Updates on Selection",
+      "status": "WORKING",
+      "details": "selectBundle() function correctly updates button text with new price"
+    },
+    {
+      "component": "Netlify Function Configuration",
+      "status": "WORKING",
+      "details": "buy-now.js properly configured with CORS headers and SimpleSwap proxy"
+    },
+    {
+      "component": "HTML Structure",
+      "status": "WORKING",
+      "details": "Bundle cards, buttons, and pricing elements properly structured"
+    }
+  ],
+  "networkRequests": {
+    "status": "CANNOT_TEST",
+    "reason": "Browser automation tool connection lost",
+    "expectedRequests": [
+      {
+        "request": "POST /.netlify/functions/buy-now",
+        "payload": "{ amountUSD: 59 or 69 }",
+        "expectedResponse": "Redirect data or checkout URL from SimpleSwap"
+      }
+    ]
+  },
+  "javascriptErrors": {
+    "status": "NONE_EXPECTED_DURING_BUNDLE_SELECTION",
+    "reason": "Bundle selection and price updates use simple DOM manipulation",
+    "expectedErrorsOnCheckout": "Runtime errors expected in addToCart() once implementation attempted"
+  },
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "task": "Implement full addToCart() function",
+      "steps": [
+        "1. Show order bump popup when button clicked",
+        "2. Add event handlers for 'Accept' and 'Decline' buttons",
+        "3. Calculate final price (base price ± order bump price)",
+        "4. Call Netlify function with amountUSD parameter",
+        "5. Handle response and redirect to SimpleSwap or show error"
+      ]
+    },
+    {
+      "priority": "CRITICAL",
+      "task": "Create order bump popup HTML",
+      "steps": [
+        "1. Create modal HTML with backdrop",
+        "2. Add 3 accessory item cards with images",
+        "3. Display pricing ($10 for bundle)",
+        "4. Add accept/decline buttons",
+        "5. Add close (X) button and backdrop click handler"
+      ]
+    },
+    {
+      "priority": "CRITICAL",
+      "task": "Implement SimpleSwap redirect logic",
+      "steps": [
+        "1. Serialize order data with product details, price, order bump flag",
+        "2. Make POST request to Netlify function",
+        "3. Parse response to get checkout URL",
+        "4. Redirect user to SimpleSwap checkout URL",
+        "5. Add error handling for failed requests"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "task": "Add comprehensive error handling",
+      "steps": [
+        "1. Handle network timeouts",
+        "2. Display user-friendly error messages",
+        "3. Log errors for debugging",
+        "4. Provide retry mechanism"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "task": "Add loading states and visual feedback",
+      "steps": [
+        "1. Show loading spinner while processing",
+        "2. Disable buttons during checkout",
+        "3. Show success message before redirect",
+        "4. Add transition animations"
+      ]
+    }
+  ],
+  "finalVerdict": "FAIL - INCOMPLETE IMPLEMENTATION",
+  "detailedFinalVerdict": {
+    "status": "FAIL",
+    "reason": "The SimpleSwap checkout flow is not fully implemented end-to-end. While the UI components and bundle selection work correctly, the critical checkout integration is missing.",
+    "workingParts": [
+      "✅ Bundle selection with 3 options ($19, $59, $69)",
+      "✅ Radio button visual feedback",
+      "✅ Price updates on bundle selection",
+      "✅ Netlify serverless function exists and is configured"
+    ],
+    "missingParts": [
+      "❌ Order bump popup (no HTML, no JavaScript)",
+      "❌ Checkout redirect mechanism",
+      "❌ SimpleSwap integration (function not called from frontend)",
+      "❌ Order data serialization and transmission",
+      "❌ Error handling for failed transactions"
+    ],
+    "nextSteps": "Implement the critical components listed in recommendations. Start with the addToCart() function implementation to wire everything together."
+  },
+  "testEnvironment": {
+    "liveURL": "https://auralo.store/",
+    "localPath": "/Users/nelsonchan/Downloads/arina Rhinestone Dress/index.html",
+    "netlifyEndpoint": "/.netlify/functions/buy-now",
+    "externalCheckoutServer": "https://simpleswap-automation-1.onrender.com",
+    "testDate": "2026-01-03T00:00:00Z",
+    "testedComponents": "Bundle selection, button behavior, HTML structure, JavaScript functions, Netlify configuration"
+  }
+}

@@ -3,16 +3,16 @@ active: true
 iteration: 1
 max_iterations: 0
 completion_promise: "DONE"
-started_at: "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+started_at: "2026-01-03T06:00:00Z"
 ---
 
-Transform arina Rhinestone Dress landing page to Franky Shaw style:
-- Full lime/dark color scheme with TikTok social proof overlays
-- Pricing: $19/1, $59/2, +$10 order bump
-- SimpleSwap checkout via onRender pool
-- Deploy to auralo.shop/arinadress (Netlify)
-- Competitor analysis: Windsor Store
-- WaistMafia-style conversion optimization adapted for dress audience
-- Comprehensive E2E testing of all UI/UX and checkout flows
+Fix critical issues on auralo.store/arinadress:
+
+1. Pricing: Only 2 options ($19 for 1 dress, $59 for 2 dresses)
+2. Order bump: $10 popup ONLY for $19 option, FREE for $59 option (no charge)
+3. TikTok text overlays: Each must address different pain point/objection, placed throughout lander
+4. Mobile images: Sized correctly for mobile phone users
+5. Checkout: Leads to onRender SimpleSwap pools
+6. MUST verify visually on live site before completion
 
 When fully complete and verified, output: <promise>DONE</promise>

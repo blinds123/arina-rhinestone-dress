@@ -224,6 +224,42 @@
         color: var(--dark);
       }
 
+      /* TikTok Chat Sections (standalone) */
+      .tiktok-chat-section {
+        padding: 20px;
+        background: var(--gray-light);
+      }
+
+      .tiktok-chat-card {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .tiktok-chat-card .tiktok-overlay {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        max-width: 100%;
+      }
+
+      .tiktok-chat-card .tiktok-overlay.question {
+        align-self: flex-start;
+      }
+
+      .tiktok-chat-card .tiktok-overlay.answer {
+        align-self: flex-end;
+        background: var(--lime);
+      }
+
       /* Thumbnail Strip */
       .thumb-container {
         display: flex;
@@ -1000,6 +1036,170 @@
         line-height: 1.6;
       }
 
+      /* ORDER BUMP POPUP */
+      .order-bump-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .order-bump-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+      }
+
+      .order-bump-modal {
+        position: relative;
+        background: var(--white);
+        border-radius: 20px;
+        max-width: 380px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        animation: slideUp 0.3s ease-out;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .order-bump-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: var(--text-muted);
+        z-index: 10;
+      }
+
+      .order-bump-content {
+        padding: 25px 20px;
+      }
+
+      .order-bump-header {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .order-bump-tag {
+        display: inline-block;
+        background: var(--lime);
+        color: var(--dark);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+
+      .order-bump-header h3 {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .order-bump-image {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .order-bump-image img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 12px;
+      }
+
+      .order-bump-description {
+        text-align: center;
+        font-size: 14px;
+        color: var(--text-secondary);
+        margin-bottom: 15px;
+        line-height: 1.5;
+      }
+
+      .order-bump-pricing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .order-bump-original {
+        font-size: 16px;
+        color: var(--text-muted);
+        text-decoration: line-through;
+      }
+
+      .order-bump-sale {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--dark);
+      }
+
+      .order-bump-savings {
+        background: #ff4444;
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      .order-bump-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .order-bump-accept {
+        background: var(--lime);
+        color: var(--dark);
+        border: none;
+        padding: 16px 20px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .order-bump-accept:hover {
+        transform: scale(1.02);
+      }
+
+      .order-bump-decline {
+        background: transparent;
+        color: var(--text-muted);
+        border: 1px solid var(--gray-border);
+        padding: 14px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
       /* REVIEWS GRID */
       .reviews-section {
         padding: var(--section-padding);
@@ -1411,6 +1611,27 @@
       </div>
     </div>
 
+    <!-- TIKTOK COMMENTS SECTION - Pain Point: Quality -->
+    <div class="tiktok-chat-section">
+      <div class="tiktok-chat-card">
+        <div class="tiktok-overlay question">
+          <div class="overlay-username">fashiongirlxo</div>
+          <p class="overlay-text">
+            is the quality good or does it look cheap in person?? 🤔
+          </p>
+        </div>
+        <div class="tiktok-overlay answer">
+          <div class="overlay-username">
+            ArinaDress <span class="verified">✓</span>
+          </div>
+          <p class="overlay-text">
+            premium rhinestones, not that cheap glue-on stuff. zero fallout
+            after 10+ wears 💎
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- COMPARISON SLIDER -->
     <div class="comparison-section">
       <h2 class="comparison-title">
@@ -1444,23 +1665,88 @@
       </div>
     </div>
 
+    <!-- TIKTOK COMMENTS SECTION - Pain Point: Body Type -->
+    <div class="tiktok-chat-section">
+      <div class="tiktok-chat-card">
+        <div class="tiktok-overlay question">
+          <div class="overlay-username">curvyqueenSarah</div>
+          <p class="overlay-text">
+            im a size 14... will this actually look good on my body type? 👀
+          </p>
+        </div>
+        <div class="tiktok-overlay answer">
+          <div class="overlay-username">
+            Jessicaaa <span class="verified">✓</span>
+          </div>
+          <p class="overlay-text">
+            size 16 here and i look STUNNING. the stretch fabric hugs all the
+            right places 🔥 trust me
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIKTOK COMMENTS SECTION - Pain Point: Bra -->
+    <div class="tiktok-chat-section">
+      <div class="tiktok-chat-card">
+        <div class="tiktok-overlay question">
+          <div class="overlay-username">bigchestprobs</div>
+          <p class="overlay-text">
+            ok but can you wear a bra with this??? im a 36DD 😅
+          </p>
+        </div>
+        <div class="tiktok-overlay answer">
+          <div class="overlay-username">
+            ArinaDress <span class="verified">✓</span>
+          </div>
+          <p class="overlay-text">
+            built-in support babe! the $59 bundle includes invisible bra cups
+            that hold EVERYTHING 💪
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIKTOK COMMENTS SECTION - Pain Point: Comfort -->
+    <div class="tiktok-chat-section">
+      <div class="tiktok-chat-card">
+        <div class="tiktok-overlay question">
+          <div class="overlay-username">allnightdancer</div>
+          <p class="overlay-text">
+            is it actually comfortable for hours or will i be dying by midnight?
+            😭
+          </p>
+        </div>
+        <div class="tiktok-overlay answer">
+          <div class="overlay-username">
+            PartyGirl_Mia <span class="verified">✓</span>
+          </div>
+          <p class="overlay-text">
+            wore it from 9pm to 4am NO issues. the stretch is unreal and the
+            rhinestones dont scratch ✨
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- BUNDLE SECTION -->
     <div class="bundle-section" id="bundles">
       <h2 class="bundle-heading">How Do You Want to Show Up? 💎</h2>
 
-      <!-- Bundle 1: PRE-ORDER -->
+      <!-- Bundle 1: Single Dress $19 -->
       <div
         class="bundle-card selected"
         onclick="selectBundle(this, 1)"
         data-price="19"
+        data-quantity="1"
       >
         <div class="bundle-top">
           <div class="bundle-radio"></div>
           <div class="bundle-info">
-            <div class="bundle-title">PRE-ORDER - The Wait-and-Save</div>
+            <div class="bundle-title">1 DRESS - Try It Risk-Free</div>
             <span class="bundle-badge">SAVE $110</span>
             <div class="bundle-ideal-for">
-              Planning ahead queens who want the deal 💰
+              Perfect for testing the waters 💧
             </div>
           </div>
           <div class="bundle-prices">
@@ -1468,53 +1754,83 @@
             <div class="bundle-orig-price">$129</div>
           </div>
         </div>
-        <div class="bundle-delivery">Ships in 2-3 Weeks</div>
+        <div class="bundle-delivery">Ships in 2-3 Days</div>
       </div>
 
-      <!-- Bundle 2: INSTANT ICON -->
-      <div class="bundle-card" onclick="selectBundle(this, 2)" data-price="59">
+      <!-- Bundle 2: Two Dresses $59 -->
+      <div
+        class="bundle-card"
+        onclick="selectBundle(this, 2)"
+        data-price="59"
+        data-quantity="2"
+      >
         <div class="bundle-top">
           <div class="bundle-radio"></div>
           <div class="bundle-info">
-            <div class="bundle-title">INSTANT ICON - Ship Today</div>
-            <span class="bundle-badge popular">MOST POPULAR ⭐</span>
+            <div class="bundle-title">2 DRESSES - Best Value Bundle</div>
+            <span class="bundle-badge popular"
+              >BEST VALUE ⭐ FREE ACCESSORY</span
+            >
             <div class="bundle-ideal-for">
-              Last-minute event? Need it ASAP? This is you 🔥
+              One for you, one for your bestie 👯‍♀️ FREE styling kit included!
             </div>
           </div>
           <div class="bundle-prices">
             <div class="bundle-sale-price">$59</div>
-            <div class="bundle-orig-price">$129</div>
-          </div>
-        </div>
-        <div class="bundle-delivery">Ships TODAY - Free Shipping</div>
-      </div>
-
-      <!-- Bundle 3: COMPLETE THE LOOK -->
-      <div class="bundle-card" onclick="selectBundle(this, 3)" data-price="69">
-        <div class="bundle-top">
-          <div class="bundle-radio"></div>
-          <div class="bundle-info">
-            <div class="bundle-title">COMPLETE THE LOOK - Full Glam Bundle</div>
-            <span class="bundle-badge">SAVE $160</span>
-            <div class="bundle-ideal-for">
-              Zero malfunctions. Pure confidence. Total package. 💎
-            </div>
-          </div>
-          <div class="bundle-prices">
-            <div class="bundle-sale-price">$69</div>
-            <div class="bundle-orig-price">$229</div>
+            <div class="bundle-orig-price">$258</div>
           </div>
         </div>
         <div class="bundle-delivery">
-          Includes: Dress + Bra Cups + Thong + Earrings
+          Ships TODAY - Free Shipping + FREE Accessory Kit
         </div>
       </div>
 
       <!-- ADD TO CART -->
-      <button class="add-to-cart-btn" onclick="addToCart()">
+      <button class="add-to-cart-btn" onclick="handleAddToCart()">
         YES—MAKE ME UNFORGETTABLE ($19)
       </button>
+    </div>
+
+    <!-- ORDER BUMP POPUP -->
+    <div id="orderBumpPopup" class="order-bump-popup" style="display: none">
+      <div class="order-bump-overlay" onclick="closeOrderBump()"></div>
+      <div class="order-bump-modal">
+        <button class="order-bump-close" onclick="closeOrderBump()">
+          &times;
+        </button>
+        <div class="order-bump-content">
+          <div class="order-bump-header">
+            <span class="order-bump-tag">ONE-TIME OFFER</span>
+            <h3>Wait! Complete Your Look 💎</h3>
+          </div>
+          <div class="order-bump-image">
+            <img
+              src="./images/product/product-04.jpg"
+              alt="Styling Accessory Kit"
+            />
+          </div>
+          <div class="order-bump-details">
+            <p class="order-bump-description">
+              Add our <strong>Rhinestone Styling Kit</strong> - includes
+              matching earrings, invisible bra cups, and seamless thong for the
+              perfect silhouette.
+            </p>
+            <div class="order-bump-pricing">
+              <span class="order-bump-original">$49</span>
+              <span class="order-bump-sale">Just $10</span>
+              <span class="order-bump-savings">SAVE 80%</span>
+            </div>
+          </div>
+          <div class="order-bump-buttons">
+            <button class="order-bump-accept" onclick="acceptOrderBump()">
+              YES! Add Kit for $10 💎
+            </button>
+            <button class="order-bump-decline" onclick="declineOrderBump()">
+              No thanks, just the dress
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- DELIVERY TIMELINE -->
@@ -1820,16 +2136,63 @@
         }
       }
 
-      // ADD TO CART - Placeholder
-      async function addToCart() {
-        const selectedCard = document.querySelector(".bundle-card.selected");
-        const price = selectedCard.getAttribute("data-price");
-        const bundleName = selectedCard
-          .querySelector(".bundle-title")
-          .textContent.trim()
-          .split("\n")[0];
+      // Global state for checkout
+      let selectedPrice = 19;
+      let selectedBundle = "1 DRESS - Try It Risk-Free";
+      let includeOrderBump = false;
 
-        // Show loading state
+      // HANDLE ADD TO CART - Check if order bump should show
+      function handleAddToCart() {
+        const selectedCard = document.querySelector(".bundle-card.selected");
+        selectedPrice = parseInt(selectedCard.getAttribute("data-price"));
+        selectedBundle = selectedCard
+          .querySelector(".bundle-title")
+          .textContent.trim();
+
+        // For $19 option, show order bump popup ($10 upsell)
+        // For $59 option, accessory kit is FREE (included)
+        if (selectedPrice === 19) {
+          showOrderBump();
+        } else {
+          // $59 option - FREE accessory kit, go straight to checkout
+          includeOrderBump = true; // Mark as included for free
+          proceedToCheckout(selectedPrice, selectedBundle, true);
+        }
+      }
+
+      // Show order bump popup
+      function showOrderBump() {
+        document.getElementById("orderBumpPopup").style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      // Close order bump popup
+      function closeOrderBump() {
+        document.getElementById("orderBumpPopup").style.display = "none";
+        document.body.style.overflow = "";
+      }
+
+      // Accept order bump (+$10)
+      function acceptOrderBump() {
+        closeOrderBump();
+        includeOrderBump = true;
+        const totalPrice = selectedPrice + 10; // $19 + $10 = $29
+        proceedToCheckout(totalPrice, selectedBundle + " + Styling Kit", true);
+      }
+
+      // Decline order bump
+      function declineOrderBump() {
+        closeOrderBump();
+        includeOrderBump = false;
+        proceedToCheckout(selectedPrice, selectedBundle, false);
+      }
+
+      // PROCEED TO CHECKOUT - Send to SimpleSwap
+      async function proceedToCheckout(
+        finalPrice,
+        bundleName,
+        hasAccessoryKit,
+      ) {
         const btn = document.querySelector(".add-to-cart-btn");
         const originalText = btn.textContent;
         btn.textContent = "Processing...";
@@ -1841,9 +2204,10 @@
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              amountUSD: parseFloat(price),
+              amountUSD: parseFloat(finalPrice),
               product: "Arina Rhinestone Dress",
               bundle: bundleName,
+              accessoryKit: hasAccessoryKit,
             }),
           });
 
@@ -1857,21 +2221,25 @@
           if (data.checkoutUrl) {
             window.location.href = data.checkoutUrl;
           } else {
-            // Fallback: direct redirect to pool server
+            // Fallback: direct redirect to onRender pool server
             const params = new URLSearchParams({
-              amount: price,
+              amount: finalPrice,
               product: "Arina Rhinestone Dress",
               bundle: bundleName,
+              accessory: hasAccessoryKit ? "yes" : "no",
             });
             window.location.href = `https://simpleswap-automation-1.onrender.com/checkout?${params}`;
           }
         } catch (error) {
           console.error("Checkout error:", error);
-          alert(
-            "Checkout is temporarily unavailable. Please try again in a moment.",
-          );
-          btn.textContent = originalText;
-          btn.disabled = false;
+          // Fallback: direct redirect to onRender pool server
+          const params = new URLSearchParams({
+            amount: finalPrice,
+            product: "Arina Rhinestone Dress",
+            bundle: bundleName,
+            accessory: hasAccessoryKit ? "yes" : "no",
+          });
+          window.location.href = `https://simpleswap-automation-1.onrender.com/checkout?${params}`;
         }
       }
 
