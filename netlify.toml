@@ -2,25 +2,25 @@
   publish = "."
   functions = "netlify/functions"
 
-# Rewrite /arinadress/* paths to root (for base href compatibility)
+# Rewrite /arinadress/images/* to /images/* (proxy compatible)
 [[redirects]]
-  from = "/arinadress/*"
-  to = "/:splat"
-  status = 200
-
-# Serve static assets directly
-[[redirects]]
-  from = "/images/*"
+  from = "/arinadress/images/*"
   to = "/images/:splat"
   status = 200
 
+# Rewrite /arinadress/fonts/* to /fonts/* (proxy compatible)
 [[redirects]]
-  from = "/fonts/*"
+  from = "/arinadress/fonts/*"
   to = "/fonts/:splat"
   status = 200
 
-# SPA fallback for other routes
+# Rewrite /arinadress/ to index
 [[redirects]]
-  from = "/*"
+  from = "/arinadress/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/arinadress"
   to = "/index.html"
   status = 200
