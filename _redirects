@@ -1,0 +1,5 @@
+# Rewrite /arinadress/ asset paths to root (for base href compatibility)
+/arinadress/images/*  /images/:splat  200
+/arinadress/fonts/*   /fonts/:splat   200
+/arinadress/          /index.html     200
+/arinadress           /index.html     200
